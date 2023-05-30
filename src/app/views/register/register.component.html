@@ -3,15 +3,16 @@
         <h1>Todavia no estas con nosotros? Crea gratis una cuenta</h1>
         <div class="register__card">
           <label for="">User</label>
-          <input type="text" placeholder="email" />
+          <input type="text" placeholder="email" [(ngModel)] = "userEmail" />
           <label for="">Password</label>
           <input
             type="password"
-            v-model="register_data.password"
             placeholder="password"
+            [(ngModel)] = "userPwd"
           />
           <button
             class="register__card__register-btn"
+            (click) = "register(userEmail, userPwd)"
           >
             Crear
           </button>

@@ -1,18 +1,21 @@
 <div class="login">
     <h1>Ya tienes cuenta? Unete a nosotros!</h1>
     <div class="login__card">
-      <label for="">User</label>
-      <input type="text" placeholder="email" />
+      <label for="">Email</label>
+      <input type="text" placeholder="email" [(ngModel)] = "userEmail" />
 
       <label for="">Password</label>
-      <input type="password" placeholder="password" />
+      <input type="password" placeholder="password" [(ngModel)] = "userPassword" />
       <button
+      (click) = "login(userEmail,userPassword)"
         class="login__card__login-btn"
+        
       >
         Acceder
       </button>
+    
     </div>
-    <div class="login__error">
+    <!-- <div class="login__error">
       Las credenciales son incorrectas!
-    </div>
+    </div> -->
   </div>

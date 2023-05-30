@@ -1,9 +1,10 @@
 <div class="user">
     <h1>Listado de usuarios</h1>
     <div class="user__list">
-      <div class="user__list__card">
-        <p class="user__list__card__name">Juancho</p>
+      <div class="user__list__card" *ngFor="let user of usersList">
+        <p class="user__list__card__name">{{user.email}}</p>
         <img
+        src="{{user.avatar}}"
           class="user__list__card__img"
           alt="banner"
         />
@@ -14,6 +15,7 @@
           >
           <button
             class="user__list__card__actions__btn"
+            (click) = "delete_user(user.id)"
           >
             Delete
           </button>

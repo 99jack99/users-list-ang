@@ -6,7 +6,10 @@ import axios from "axios";
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
+
 export class UsersComponent implements OnInit {
+
+  
 
 usersList:Array<any>= [{}];  
 

@@ -9,10 +9,7 @@
           alt="banner"
         />
         <div class="user__list__card__actions">
-          <div
-            class="user__list__card__actions__btn"
-            >More</div
-          >
+          <a class="user__list__card__actions__btn" [routerLink]="['user', user.id]">More</a>
           <button
             class="user__list__card__actions__btn"
             (click) = "delete_user(user.id)"

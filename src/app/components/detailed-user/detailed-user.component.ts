@@ -9,22 +9,19 @@ import axios from "axios";
 })
 export class DetailedUserComponent {
 
-  
+  constructor(private route: ActivatedRoute) {
+  }
   
   id:any = 0;
+  user:Array<any> = [];
 
- /*  user:Array<object> = []; */
-
-  user = [];
-
-
-   get_user = () => {
-
+   get_user = (id:any) => {
     axios
-      .get(`https://reqres.in/api/users/${2}`)
+      .get(`https://reqres.in/api/users/${id}`)
       .then((res) => {
         console.log(res);
         this.user = res.data.data;
+        JSON.stringify(this.user)
         console.log(this.user);
         
       })  
@@ -33,15 +30,14 @@ export class DetailedUserComponent {
       });
   };
 
-  constructor(private route: ActivatedRoute) {
-  }
+ 
 
   ngOnInit(){
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
     });
 
-    this.get_user()
+   this.get_user(this.id)
   }
 
 }
